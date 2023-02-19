@@ -1,0 +1,304 @@
+@font-face{
+    font-family: "Dhivehi";
+    src: url(fonts/MVWaheed.otf);
+    font-weight: 800;
+}
+
+@font-face{
+    font-family: "Dhivehi";
+    src: url(fonts/MV_Faseyha.otf);
+    font-weight: 400;
+}
+
+
+.dhivehi_text{
+    font-family: Dhivehi;
+    direction: rtl;
+}
+
+/*as blog's font family is set to rtl, the photos will not
+be visible when the bxSlider is set up so the direction ltr is 
+set for bxSlider to make it work*/
+.bx-wrapper{
+    direction: ltr;
+}
+
+.article h2{
+    font-size: 40px;
+}
+
+.article p{
+    font-size: 20px;
+    line-height: 35px;
+    color: #000000;
+}
+
+.article img{
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+#hero img{
+    border-radius:50%;
+    border-width:10px;
+    border-color:orangered;
+    border-style:solid;
+    margin-bottom: 30px;
+    margin-top: 70px;
+}
+
+h4{
+    text-transform:uppercase;
+    font-size:16px;
+    text-align:left;
+}
+
+#small_heading{
+    text-align: center;
+}
+
+p{
+    color: gray;
+    text-align: justify;
+    margin-bottom: 50px;
+}
+
+#intro{
+    font-weight: 300;
+    font-style: italic;
+    font-size: 20px;
+    margin: 5px;
+}
+
+#name{
+    font-size: 35px;
+    color: brown;
+    margin: 0;
+}
+
+#title{
+    color: white;
+    background-color: chocolate;
+    font-size: 30px;
+    padding: 10px;
+    width: 300px;
+    margin: auto;
+}
+
+#hero{
+    text-align: center;
+    padding-bottom: 50px;
+    background: linear-gradient(rgba(212, 175,55, 0.5), rgba(212, 175,55, 0.5)), url('images/bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#content{
+    width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+footer{
+    text-align: center;
+    background-color: chocolate;
+    padding: 20px;
+}
+
+.white{
+    color: white;
+}
+
+.footer-icon{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav a{
+    text-transform: uppercase;
+    color: black;
+    font-size: 16px;
+    font-weight: 800;
+    text-decoration: none;
+
+}
+
+nav li{
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+header{
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    left: 0px;
+    width: 1200px;
+    margin: auto;
+}
+
+header nav{
+    float: right;
+}
+
+@keyframes colorDance {
+    0%{
+        color:chocolate;
+
+    }
+    50%{
+
+        color: red;
+    }
+    75%{
+
+        color: orangered;
+    }
+    100%{
+        color: orange;
+    }
+}
+
+
+/*Thumbnail*/
+.thumbnail img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50px;
+    object-position: right;
+
+    transition-property: all;
+    transition-duration: 0.4s;
+}
+
+.thumbnail:hover img{
+    /*when cursor goes over thumbnail, image's border will become pointy*/
+    border-radius: 0px;
+    object-position: left;
+}
+
+
+.thumbnail h2{
+    font-size: 18px;
+    margin: 5px 0px;
+    text-transform: uppercase;
+}
+
+.thumbnail h3{
+    font-size: 14px;
+    margin: 5px 0px;
+    font-weight: 600;
+}
+
+.thumbnail p{
+    font-size: 12px;
+}
+
+.thumbnail{
+    display: inline-block;
+    width: 350px;
+    margin: 10px;
+}
+
+/*when the cursor goes over thumbnail, h2 changes color*/
+.thumbnail:hover h2{
+    color: orange;
+}
+
+#page-title{
+    text-transform: uppercase;
+    color: maroon;
+    margin-top: 0px;
+    padding-top: 100px;
+    margin-bottom: 25px;
+    font-size: 45px;
+
+    /*color changing animation*/
+    animation-name: colorDance;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+@media (max-width: 1200px){
+
+    header, #content{
+        width: 100%;
+        padding-right: 20px;
+        padding-left: 20px;
+        box-sizing: border-box;
+    }   
+}
+
+
+@media (max-width: 768px) {
+    p {
+        color: red;
+    }
+
+    .thumbnail {
+        display: block;
+        margin: auto;
+    }
+}
+
+
+/*making a responsive menu: making it friendly for devices
+smaller than desktop*/
+
+#mobile-menu-icon{
+    float: right; /*bring the icon to the right side of the page*/
+}
+
+@media (min-width: 768px){
+    #mobile-menu-icon{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    header nav{
+        position: fixed;
+        top: 0;
+        right: 100%;
+        left: 0;
+        bottom: 0;
+        background-color: orange;
+        transition: all 1s;
+
+        text-align: center;
+        padding-top: 200px;
+        overflow: hidden;
+    }
+
+    header nav.open{
+        right: 0;
+    }
+    
+    nav li{
+        display: block;
+    }
+
+    nav a{
+        font-size: 35px;
+    }
+
+    #mobile-menu-icon{
+        position: fixed;
+        right: 25px;
+    }
+}
+
+
